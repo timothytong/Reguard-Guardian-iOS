@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */; };
+		331DA3BC25ABFEAD00FAFCF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
+		331DA3C125ABFEAD00FAFCF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3C025ABFEAD00FAFCF6 /* Assets.xcassets */; };
+		331DA3CF25ABFEAD00FAFCF6 /* ReGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3CE25ABFEAD00FAFCF6 /* ReGuardTests.swift */; };
+		331DA3DA25ABFEAE00FAFCF6 /* ReGuardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3D925ABFEAE00FAFCF6 /* ReGuardUITests.swift */; };
+		331DA3F625ABFEE500FAFCF6 /* AWSS3DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3EA25ABFEE400FAFCF6 /* AWSS3DAO.swift */; };
+		331DA3F825ABFEE500FAFCF6 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3EC25ABFEE500FAFCF6 /* Base.lproj */; };
+		331DA3FD25ABFEE500FAFCF6 /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */; };
+		331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3F325ABFEE500FAFCF6 /* FaceView.swift */; };
+		331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */; };
+		331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */; };
+		3879602B73C2FF034A5AA55C /* Pods_ReGuard_ReGuardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */; };
+		D825E10C182D25E874703988 /* Pods_ReGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */; };
+		E4A1E3D367D35E968BE9C633 /* Pods_ReGuardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D80517638E77191353A16A /* Pods_ReGuardTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		331DA3CB25ABFEAD00FAFCF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 331DA3A925ABFEAD00FAFCF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 331DA3B025ABFEAD00FAFCF6;
+			remoteInfo = ReGuard;
+		};
+		331DA3D625ABFEAE00FAFCF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 331DA3A925ABFEAD00FAFCF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 331DA3B025ABFEAD00FAFCF6;
+			remoteInfo = ReGuard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		331DA3B125ABFEAD00FAFCF6 /* ReGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		331DA3BB25ABFEAD00FAFCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		331DA3C025ABFEAD00FAFCF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		331DA3C525ABFEAD00FAFCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331DA3CA25ABFEAD00FAFCF6 /* ReGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		331DA3CE25ABFEAD00FAFCF6 /* ReGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReGuardTests.swift; sourceTree = "<group>"; };
+		331DA3D025ABFEAD00FAFCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331DA3D525ABFEAE00FAFCF6 /* ReGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		331DA3D925ABFEAE00FAFCF6 /* ReGuardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReGuardUITests.swift; sourceTree = "<group>"; };
+		331DA3DB25ABFEAE00FAFCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331DA3EA25ABFEE400FAFCF6 /* AWSS3DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSS3DAO.swift; sourceTree = "<group>"; };
+		331DA3EC25ABFEE500FAFCF6 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
+		331DA3F325ABFEE500FAFCF6 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
+		4052D5EBBA64D991AEFDF9F7 /* Pods-ReGuardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuardTests.debug.xcconfig"; path = "Target Support Files/Pods-ReGuardTests/Pods-ReGuardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuard_ReGuardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0B5E7166B27364D0FF04EF /* Pods-ReGuard-ReGuardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard-ReGuardUITests.release.xcconfig"; path = "Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7060484491DCE3764759A2AD /* Pods-ReGuard-ReGuardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard-ReGuardUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		726307012DB26E8F0BB5A23F /* Pods-ReGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard.debug.xcconfig"; path = "Target Support Files/Pods-ReGuard/Pods-ReGuard.debug.xcconfig"; sourceTree = "<group>"; };
+		B03DF90379C85DC2E7CD32B0 /* Pods-ReGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard.release.xcconfig"; path = "Target Support Files/Pods-ReGuard/Pods-ReGuard.release.xcconfig"; sourceTree = "<group>"; };
+		C5D80517638E77191353A16A /* Pods_ReGuardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E8904EFCE1F3B6CF5805E5 /* Pods-ReGuardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuardTests.release.xcconfig"; path = "Target Support Files/Pods-ReGuardTests/Pods-ReGuardTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		331DA3AE25ABFEAD00FAFCF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D825E10C182D25E874703988 /* Pods_ReGuard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3C725ABFEAD00FAFCF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A1E3D367D35E968BE9C633 /* Pods_ReGuardTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3D225ABFEAD00FAFCF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3879602B73C2FF034A5AA55C /* Pods_ReGuard_ReGuardUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		331DA3A825ABFEAD00FAFCF6 = {
+			isa = PBXGroup;
+			children = (
+				331DA3B325ABFEAD00FAFCF6 /* ReGuard */,
+				331DA3CD25ABFEAD00FAFCF6 /* ReGuardTests */,
+				331DA3D825ABFEAE00FAFCF6 /* ReGuardUITests */,
+				331DA3B225ABFEAD00FAFCF6 /* Products */,
+				79CC837795B38163A3444351 /* Pods */,
+				540ACC32DB7F355462213EEB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		331DA3B225ABFEAD00FAFCF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				331DA3B125ABFEAD00FAFCF6 /* ReGuard.app */,
+				331DA3CA25ABFEAD00FAFCF6 /* ReGuardTests.xctest */,
+				331DA3D525ABFEAE00FAFCF6 /* ReGuardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		331DA3B325ABFEAD00FAFCF6 /* ReGuard */ = {
+			isa = PBXGroup;
+			children = (
+				331DA44C25AC022100FAFCF6 /* Extensions */,
+				331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */,
+				331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */,
+				331DA3C025ABFEAD00FAFCF6 /* Assets.xcassets */,
+				331DA3EA25ABFEE400FAFCF6 /* AWSS3DAO.swift */,
+				331DA3EC25ABFEE500FAFCF6 /* Base.lproj */,
+				331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */,
+				331DA3F325ABFEE500FAFCF6 /* FaceView.swift */,
+				331DA3C525ABFEAD00FAFCF6 /* Info.plist */,
+			);
+			path = ReGuard;
+			sourceTree = "<group>";
+		};
+		331DA3CD25ABFEAD00FAFCF6 /* ReGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				331DA3CE25ABFEAD00FAFCF6 /* ReGuardTests.swift */,
+				331DA3D025ABFEAD00FAFCF6 /* Info.plist */,
+			);
+			path = ReGuardTests;
+			sourceTree = "<group>";
+		};
+		331DA3D825ABFEAE00FAFCF6 /* ReGuardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				331DA3D925ABFEAE00FAFCF6 /* ReGuardUITests.swift */,
+				331DA3DB25ABFEAE00FAFCF6 /* Info.plist */,
+			);
+			path = ReGuardUITests;
+			sourceTree = "<group>";
+		};
+		331DA44C25AC022100FAFCF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */,
+				331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		540ACC32DB7F355462213EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */,
+				4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */,
+				C5D80517638E77191353A16A /* Pods_ReGuardTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79CC837795B38163A3444351 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				726307012DB26E8F0BB5A23F /* Pods-ReGuard.debug.xcconfig */,
+				B03DF90379C85DC2E7CD32B0 /* Pods-ReGuard.release.xcconfig */,
+				7060484491DCE3764759A2AD /* Pods-ReGuard-ReGuardUITests.debug.xcconfig */,
+				6D0B5E7166B27364D0FF04EF /* Pods-ReGuard-ReGuardUITests.release.xcconfig */,
+				4052D5EBBA64D991AEFDF9F7 /* Pods-ReGuardTests.debug.xcconfig */,
+				F8E8904EFCE1F3B6CF5805E5 /* Pods-ReGuardTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		331DA3B025ABFEAD00FAFCF6 /* ReGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331DA3DE25ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuard" */;
+			buildPhases = (
+				D14A1B26DCC5907DE9749A21 /* [CP] Check Pods Manifest.lock */,
+				331DA3AD25ABFEAD00FAFCF6 /* Sources */,
+				331DA3AE25ABFEAD00FAFCF6 /* Frameworks */,
+				331DA3AF25ABFEAD00FAFCF6 /* Resources */,
+				033FE6F9E05AECD2EA992B59 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReGuard;
+			productName = ReGuard;
+			productReference = 331DA3B125ABFEAD00FAFCF6 /* ReGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		331DA3C925ABFEAD00FAFCF6 /* ReGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331DA3E125ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuardTests" */;
+			buildPhases = (
+				C1F366A0993A43E835D991CC /* [CP] Check Pods Manifest.lock */,
+				331DA3C625ABFEAD00FAFCF6 /* Sources */,
+				331DA3C725ABFEAD00FAFCF6 /* Frameworks */,
+				331DA3C825ABFEAD00FAFCF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				331DA3CC25ABFEAD00FAFCF6 /* PBXTargetDependency */,
+			);
+			name = ReGuardTests;
+			productName = ReGuardTests;
+			productReference = 331DA3CA25ABFEAD00FAFCF6 /* ReGuardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		331DA3D425ABFEAD00FAFCF6 /* ReGuardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331DA3E425ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuardUITests" */;
+			buildPhases = (
+				BC5BAC941D5E098B4BD3B0B8 /* [CP] Check Pods Manifest.lock */,
+				331DA3D125ABFEAD00FAFCF6 /* Sources */,
+				331DA3D225ABFEAD00FAFCF6 /* Frameworks */,
+				331DA3D325ABFEAD00FAFCF6 /* Resources */,
+				683A914522CCEF4F422BD773 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				331DA3D725ABFEAE00FAFCF6 /* PBXTargetDependency */,
+			);
+			name = ReGuardUITests;
+			productName = ReGuardUITests;
+			productReference = 331DA3D525ABFEAE00FAFCF6 /* ReGuardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		331DA3A925ABFEAD00FAFCF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					331DA3B025ABFEAD00FAFCF6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					331DA3C925ABFEAD00FAFCF6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 331DA3B025ABFEAD00FAFCF6;
+					};
+					331DA3D425ABFEAD00FAFCF6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 331DA3B025ABFEAD00FAFCF6;
+					};
+				};
+			};
+			buildConfigurationList = 331DA3AC25ABFEAD00FAFCF6 /* Build configuration list for PBXProject "ReGuard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 331DA3A825ABFEAD00FAFCF6;
+			productRefGroup = 331DA3B225ABFEAD00FAFCF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				331DA3B025ABFEAD00FAFCF6 /* ReGuard */,
+				331DA3C925ABFEAD00FAFCF6 /* ReGuardTests */,
+				331DA3D425ABFEAD00FAFCF6 /* ReGuardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		331DA3AF25ABFEAD00FAFCF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331DA3C125ABFEAD00FAFCF6 /* Assets.xcassets in Resources */,
+				331DA3F825ABFEE500FAFCF6 /* Base.lproj in Resources */,
+				331DA3BC25ABFEAD00FAFCF6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3C825ABFEAD00FAFCF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3D325ABFEAD00FAFCF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		033FE6F9E05AECD2EA992B59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReGuard/Pods-ReGuard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReGuard/Pods-ReGuard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReGuard/Pods-ReGuard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		683A914522CCEF4F422BD773 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC5BAC941D5E098B4BD3B0B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReGuard-ReGuardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1F366A0993A43E835D991CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReGuardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14A1B26DCC5907DE9749A21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReGuard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		331DA3AD25ABFEAD00FAFCF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */,
+				331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */,
+				331DA3F625ABFEE500FAFCF6 /* AWSS3DAO.swift in Sources */,
+				331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */,
+				331DA3FD25ABFEE500FAFCF6 /* DetectionViewController.swift in Sources */,
+				331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3C625ABFEAD00FAFCF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331DA3CF25ABFEAD00FAFCF6 /* ReGuardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		331DA3D125ABFEAD00FAFCF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331DA3DA25ABFEAE00FAFCF6 /* ReGuardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		331DA3CC25ABFEAD00FAFCF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 331DA3B025ABFEAD00FAFCF6 /* ReGuard */;
+			targetProxy = 331DA3CB25ABFEAD00FAFCF6 /* PBXContainerItemProxy */;
+		};
+		331DA3D725ABFEAE00FAFCF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 331DA3B025ABFEAD00FAFCF6 /* ReGuard */;
+			targetProxy = 331DA3D625ABFEAE00FAFCF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				331DA3BB25ABFEAD00FAFCF6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		331DA3DC25ABFEAE00FAFCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		331DA3DD25ABFEAE00FAFCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		331DA3DF25ABFEAE00FAFCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 726307012DB26E8F0BB5A23F /* Pods-ReGuard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		331DA3E025ABFEAE00FAFCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B03DF90379C85DC2E7CD32B0 /* Pods-ReGuard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		331DA3E225ABFEAE00FAFCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4052D5EBBA64D991AEFDF9F7 /* Pods-ReGuardTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReGuard.app/ReGuard";
+			};
+			name = Debug;
+		};
+		331DA3E325ABFEAE00FAFCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E8904EFCE1F3B6CF5805E5 /* Pods-ReGuardTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReGuard.app/ReGuard";
+			};
+			name = Release;
+		};
+		331DA3E525ABFEAE00FAFCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7060484491DCE3764759A2AD /* Pods-ReGuard-ReGuardUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReGuard;
+			};
+			name = Debug;
+		};
+		331DA3E625ABFEAE00FAFCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D0B5E7166B27364D0FF04EF /* Pods-ReGuard-ReGuardUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ALAWU69X6;
+				INFOPLIST_FILE = ReGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.timothytong.ReGuardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReGuard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		331DA3AC25ABFEAD00FAFCF6 /* Build configuration list for PBXProject "ReGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331DA3DC25ABFEAE00FAFCF6 /* Debug */,
+				331DA3DD25ABFEAE00FAFCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		331DA3DE25ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331DA3DF25ABFEAE00FAFCF6 /* Debug */,
+				331DA3E025ABFEAE00FAFCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		331DA3E125ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331DA3E225ABFEAE00FAFCF6 /* Debug */,
+				331DA3E325ABFEAE00FAFCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		331DA3E425ABFEAE00FAFCF6 /* Build configuration list for PBXNativeTarget "ReGuardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331DA3E525ABFEAE00FAFCF6 /* Debug */,
+				331DA3E625ABFEAE00FAFCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 331DA3A925ABFEAD00FAFCF6 /* Project object */;
+}
