@@ -13,10 +13,12 @@ PODS:
     - AWSCore (= 2.21.0)
   - AWSS3 (2.21.0):
     - AWSCore (= 2.21.0)
+  - SwiftState (6.0.0)
 
 DEPENDENCIES:
   - AWSMobileClient
   - AWSS3
+  - SwiftState
 
 SPEC REPOS:
   trunk:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - AWSCore
     - AWSMobileClient
     - AWSS3
+    - SwiftState
 
 SPEC CHECKSUMS:
   AWSAuthCore: 48c359c1a12b3b083957828766e76f5de76ab1e4
@@ -34,7 +37,8 @@ SPEC CHECKSUMS:
   AWSCore: 878e7726c80e2b5494b77c9bb5e7a059d10994f0
   AWSMobileClient: cc99c37739440cb3b35e47476a58dd82dd0603bd
   AWSS3: 9da385e45c39aed30430362f50a52d2474829243
+  SwiftState: 5696580d3b91656d1c67773ca5c6d5e51610c711
 
-PODFILE CHECKSUM: a2e2c1cef99bb1c39cc0eb75e7401085bbe37d6e
+PODFILE CHECKSUM: fc829c72eefc85c270ac1410efb218be5b4d3a2e
 
 COCOAPODS: 1.10.0

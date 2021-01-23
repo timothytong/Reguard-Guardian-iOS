@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aar-lP-KaY">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aar-lP-KaY">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,26 +10,37 @@
         <!--Detection View Controller-->
         <scene sceneID="tR7-cA-c2e">
             <objects>
-                <viewController id="Aar-lP-KaY" customClass="DetectionViewController" customModule="FaceLasers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Aar-lP-KaY" customClass="DetectionViewController" customModule="ReGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U9Y-eo-qQq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-4K-rvp" customClass="FaceView" customModule="FaceLasers" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-4K-rvp" customClass="FaceView" customModule="ReGuard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="● REC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-u3-G9X">
+                                <rect key="frame" x="25" y="64" width="65.333333333333329" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.061129800925523781" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5E3-3m-hrQ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8b2-u3-G9X" firstAttribute="leading" secondItem="5E3-3m-hrQ" secondAttribute="leading" constant="25" id="KKj-Iq-WPE"/>
+                            <constraint firstItem="8b2-u3-G9X" firstAttribute="top" secondItem="5E3-3m-hrQ" secondAttribute="top" constant="20" id="yCI-bY-Yrg"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Gax-pf-er4" appends="YES" id="Y9h-Ee-WNx"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="faceView" destination="9SK-4K-rvp" id="huL-hY-fKf"/>
+                        <outlet property="recordingLabel" destination="8b2-u3-G9X" id="PcN-Y2-fsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-pc-gnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,7 +50,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-234.40000000000001" y="160.56971514242881"/>
+            <point key="canvasLocation" x="-234.40000000000001" y="160.34482758620689"/>
         </scene>
     </scenes>
 </document>

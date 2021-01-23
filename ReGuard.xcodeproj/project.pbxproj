@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3301AC7525B94F2C00D6AD9D /* GuardianState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301AC7425B94F2C00D6AD9D /* GuardianState.swift */; };
 		331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */; };
-		331DA3BC25ABFEAD00FAFCF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
 		331DA3C125ABFEAD00FAFCF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3C025ABFEAD00FAFCF6 /* Assets.xcassets */; };
 		331DA3CF25ABFEAD00FAFCF6 /* ReGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3CE25ABFEAD00FAFCF6 /* ReGuardTests.swift */; };
 		331DA3DA25ABFEAE00FAFCF6 /* ReGuardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3D925ABFEAE00FAFCF6 /* ReGuardUITests.swift */; };
@@ -18,6 +18,9 @@
 		331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA3F325ABFEE500FAFCF6 /* FaceView.swift */; };
 		331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */; };
 		331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */; };
+		33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */; };
+		33C5F95325BA9CC900424F0E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F95225BA9CC900424F0E /* Session.swift */; };
+		33C5F96725BAB1D300424F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
 		3879602B73C2FF034A5AA55C /* Pods_ReGuard_ReGuardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */; };
 		D825E10C182D25E874703988 /* Pods_ReGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */; };
 		E4A1E3D367D35E968BE9C633 /* Pods_ReGuardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D80517638E77191353A16A /* Pods_ReGuardTests.framework */; };
@@ -42,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3301AC7425B94F2C00D6AD9D /* GuardianState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianState.swift; sourceTree = "<group>"; };
 		331DA3B125ABFEAD00FAFCF6 /* ReGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		331DA3BB25ABFEAD00FAFCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		331DA3F325ABFEE500FAFCF6 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
+		33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFetcher.swift; sourceTree = "<group>"; };
+		33C5F95225BA9CC900424F0E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		4052D5EBBA64D991AEFDF9F7 /* Pods-ReGuardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuardTests.debug.xcconfig"; path = "Target Support Files/Pods-ReGuardTests/Pods-ReGuardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuard_ReGuardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0B5E7166B27364D0FF04EF /* Pods-ReGuard-ReGuardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard-ReGuardUITests.release.xcconfig"; path = "Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3301AC7225B94F0A00D6AD9D /* GuardianFSM */ = {
+			isa = PBXGroup;
+			children = (
+				3301AC7425B94F2C00D6AD9D /* GuardianState.swift */,
+			);
+			path = GuardianFSM;
+			sourceTree = "<group>";
+		};
 		331DA3A825ABFEAD00FAFCF6 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,9 @@
 		331DA3B325ABFEAD00FAFCF6 /* ReGuard */ = {
 			isa = PBXGroup;
 			children = (
+				33C5F95125BA9CB900424F0E /* Models */,
+				33C5F94B25BA9C5600424F0E /* Network */,
+				3301AC7225B94F0A00D6AD9D /* GuardianFSM */,
 				331DA44C25AC022100FAFCF6 /* Extensions */,
 				331DA3B425ABFEAD00FAFCF6 /* AppDelegate.swift */,
 				331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */,
@@ -160,6 +177,22 @@
 				331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		33C5F94B25BA9C5600424F0E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		33C5F95125BA9CB900424F0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33C5F95225BA9CC900424F0E /* Session.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		540ACC32DB7F355462213EEB /* Frameworks */ = {
@@ -293,9 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C5F96725BAB1D300424F0E /* Main.storyboard in Resources */,
 				331DA3C125ABFEAD00FAFCF6 /* Assets.xcassets in Resources */,
 				331DA3F825ABFEE500FAFCF6 /* Base.lproj in Resources */,
-				331DA3BC25ABFEAD00FAFCF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,12 +456,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */,
 				331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */,
 				331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */,
 				331DA3F625ABFEE500FAFCF6 /* AWSS3DAO.swift in Sources */,
+				33C5F95325BA9CC900424F0E /* Session.swift in Sources */,
 				331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */,
 				331DA3FD25ABFEE500FAFCF6 /* DetectionViewController.swift in Sources */,
 				331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */,
+				3301AC7525B94F2C00D6AD9D /* GuardianState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +562,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -581,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

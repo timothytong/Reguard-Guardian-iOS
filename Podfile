@@ -8,6 +8,7 @@ target 'ReGuard' do
   # Pods for ReGuard
   pod 'AWSMobileClient'
   pod 'AWSS3'
+  pod 'SwiftState'
 
   target 'ReGuardTests' do
     inherit! :search_paths
