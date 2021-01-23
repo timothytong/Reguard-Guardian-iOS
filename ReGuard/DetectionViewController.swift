@@ -126,8 +126,8 @@ class DetectionViewController: UIViewController {
 // MARK: - FSM
 extension DetectionViewController {
     @objc func refreshActiveSession() {
-        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else { return }
-        // let deviceId = "BADC19DE-2E31-4B09-B6E2-85EBDFC778E6"
+        // guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else { return }
+        let deviceId = "BADC19DE-2E31-4B09-B6E2-85EBDFC778E6"
         self.sessionFetcher.getActiveSession(userId: "user", deviceId: deviceId) { session in
             if session != nil && self.stateMachine?.state != .guarding {
                 self.stateMachine! <- .guarding

@@ -30,78 +30,76 @@ import Foundation
 import AWSS3
 
 class AWSS3DAO {
-  
-  @objc var s3CompletionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
-  @objc var progressBlock: AWSS3TransferUtilityProgressBlock?
-  @objc lazy var transferUtility = {
-    AWSS3TransferUtility.default()
-  }()
-  
-  var progressView: UIProgressView! = UIProgressView()
-  
-  init() {
-    self.progressBlock = {(task, progress) in
-      DispatchQueue.main.async(execute: {
-        if (self.progressView.progress < Float(progress.fractionCompleted)) {
-          self.progressView.progress = Float(progress.fractionCompleted)
-        }
-      })
-    }
     
+    @objc var s3CompletionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
+    @objc var progressBlock: AWSS3TransferUtilityProgressBlock?
+    @objc lazy var transferUtility = {
+        AWSS3TransferUtility.default()
+    }()
     
-  }
-  
-  @objc func uploadData(filePath: URL, completionHandler: @escaping (_ filePath: URL) -> Void) {
-    var data: Data!
-    do {
-      data = try Data(contentsOf: filePath)
-    } catch {
-      print("Unable to retrieve data from \(filePath)")
-    }
-    let segments = filePath.absoluteString.split(separator: "/")
-    let userId = "user" // TODO: update to user's real user id
-    let objectKey = "users/\(userId)/events/\(segments[segments.count - 1])"
+    var progressView: UIProgressView! = UIProgressView()
     
-    self.s3CompletionHandler = { (task, error) -> Void in
-      DispatchQueue.main.async {
-        if let error = error {
-          print("Failed with error: \(error)")
-        }
-        else if(self.progressView.progress != 1.0) {
-          print("Error: Failed - Likely due to invalid region / filename")
-        }
-        else{
-          print("Upload success!")
-          completionHandler(filePath)
-        }
-      }
-    }
-    
-    let expression = AWSS3TransferUtilityUploadExpression()
-    expression.progressBlock = progressBlock
-    
-    DispatchQueue.main.async(execute: {
-      self.progressView.progress = 0
-    })
-    
-    
-    
-    transferUtility.uploadData(
-      data,
-      bucket: "guardian-event-captures",
-      key: objectKey,
-      contentType: "video/mp4",
-      expression: expression,
-      completionHandler: s3CompletionHandler).continueWith { (task) -> AnyObject? in
-        if let error = task.error {
-          print("Upload to S3 Error: \(error.localizedDescription)")
+    init() {
+        self.progressBlock = {(task, progress) in
+            DispatchQueue.main.async(execute: {
+                if (self.progressView.progress < Float(progress.fractionCompleted)) {
+                    self.progressView.progress = Float(progress.fractionCompleted)
+                }
+            })
         }
         
-        if let _ = task.result {
-          print("Upload Starting for objectKey \(objectKey)!")
+        
+    }
+    
+    @objc func uploadData(filePath: URL, completionHandler: @escaping (_ filePath: URL) -> Void) {
+        var data: Data!
+        do {
+            data = try Data(contentsOf: filePath)
+        } catch {
+            print("Unable to retrieve data from \(filePath)")
+        }
+        let segments = filePath.absoluteString.split(separator: "/")
+        let userId = "user" // TODO: update to user's real user id
+        let objectKey = "users/\(userId)/events/\(segments[segments.count - 1])"
+        
+        self.s3CompletionHandler = { (task, error) -> Void in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Failed with error: \(error)")
+                }
+                else if(self.progressView.progress != 1.0) {
+                    print("Error: Failed - Likely due to invalid region / filename")
+                }
+                else{
+                    print("Upload success!")
+                    completionHandler(filePath)
+                }
+            }
         }
         
-        return nil;
-      }
-  }
+        let expression = AWSS3TransferUtilityUploadExpression()
+        expression.progressBlock = progressBlock
+        
+        DispatchQueue.main.async(execute: {
+            self.progressView.progress = 0
+        })
+        
+        transferUtility.uploadData(
+            data,
+            bucket: "guardian-event-captures",
+            key: objectKey,
+            contentType: "video/mp4",
+            expression: expression,
+            completionHandler: s3CompletionHandler).continueWith { (task) -> AnyObject? in
+                if let error = task.error {
+                    print("Upload to S3 Error: \(error.localizedDescription)")
+                }
+                
+                if let _ = task.result {
+                    print("Upload Starting for objectKey \(objectKey)!")
+                }
+                
+                return nil;
+            }
+    }
 }
