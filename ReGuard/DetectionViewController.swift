@@ -1,31 +1,3 @@
-/// Copyright (c) 2019 Razeware LLC
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-
 import AVFoundation
 import UIKit
 import Vision
@@ -40,11 +12,11 @@ class DetectionViewController: UIViewController {
                 videoOutput = AVCaptureVideoDataOutput(),
                 audioOutput = AVCaptureAudioDataOutput(),
                 sessionQueue = DispatchQueue(label: "SessionQueue"),
-                s3Dao = AWSS3DAO(),
                 deviceUUID = UIDevice.current.identifierForVendor!.uuidString
     
-    private var recorded = false,
+    private var recordingEnabled = true,
                 isRecording = false,
+                documentUploader = DocumentUploader(),
                 previewLayer: AVCaptureVideoPreviewLayer!,
                 sequenceHandler = VNSequenceRequestHandler(),
                 photoData: Data?,
@@ -73,13 +45,13 @@ class DetectionViewController: UIViewController {
     
     let sessionFetcher = SessionFetcher()
     var guardianSession: Session?
-    var autofetcher: Timer?
+    var autoSessionFetcherTimer: Timer?
     var stateMachine: StateMachine<GuardianState, NoEvent>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uploadFilesInDocumentDir()
+        documentUploader.uploadFilesInDocumentDir()
         
         maxX = view.bounds.maxX
         midY = view.bounds.midY
@@ -88,38 +60,6 @@ class DetectionViewController: UIViewController {
         configureCaptureSession()
         session.startRunning()
         setupStateMachine()
-    }
-    
-    // MARK: - Accessing files
-    func uploadFilesInDocumentDir() {
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        do {
-            print("Listing current saved files..")
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-            fileURLs.forEach({url in
-                self.uploadDataToS3AndDelete(filePath: url)
-            })
-        } catch {
-            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
-        }
-    }
-    
-    func uploadDataToS3AndDelete(filePath: URL) {
-        let completionHandler: (URL) -> Void = { filePath in
-            print("Deleting file at \(filePath)")
-            if FileManager.default.fileExists(atPath: filePath.path) {
-                do {
-                    try FileManager.default.removeItem(at: filePath)
-                    print("Removed \(filePath)")
-                } catch {
-                    print("Unable to remove \(filePath)")
-                }
-            } else {
-                print("Unable to find file at \(filePath)")
-            }
-        }
-        self.s3Dao.uploadData(filePath: filePath, completionHandler: completionHandler)
     }
 }
 
@@ -142,11 +82,15 @@ extension DetectionViewController {
                 fsm.addRoute(.guarding => .idle)
                 
                 fsm.addHandler(.idle => .guarding) { context in
-                    print("Now guarding!!!")
-                    self.autofetcher?.invalidate()
+                    print("Now guarding")
+                    self.recordingLabel.isHidden = false
+                    self.recordingEnabled = true
+                    self.autoSessionFetcherTimer?.invalidate()
                 }
                 
                 fsm.addHandler(.guarding => .idle) { context in
+                    print("Now idling")
+                    self.recordingLabel.isHidden = true
                     self.startSessionAutoFetcher()
                 }
             }
@@ -158,7 +102,15 @@ extension DetectionViewController {
     }
     
     func startSessionAutoFetcher() {
-        autofetcher = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.refreshActiveSession), userInfo: nil, repeats: true)
+        autoSessionFetcherTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.refreshActiveSession), userInfo: nil, repeats: true)
+    }
+    
+    func startRecordingEnablerTimer() {
+        print("Starting recording enabler...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 60, execute: { [weak self] in
+            self?.recordingEnabled = true
+            print("Ready to record again")
+        })
     }
 }
 
@@ -171,6 +123,10 @@ extension DetectionViewController {
     func detectedHumanIOS14(request: VNRequest, error: Error?) {
         guard let results = request.results as? [VNDetectedObjectObservation],
               let result = results.first else {
+            faceView.boundingBox = CGRect(x: 0, y: 0, width: 0, height: 0)
+            DispatchQueue.main.async {
+                self.faceView.setNeedsDisplay()
+            }
             return
         }
         let box = result.boundingBox
@@ -179,7 +135,7 @@ extension DetectionViewController {
             self.faceView.setNeedsDisplay()
         }
         if (self.stateMachine?.state == .guarding) {
-            if (!recorded && !isRecording) {
+            if (recordingEnabled && !isRecording) {
                 isRecording = true
                 print("Human detected, recording next 10s")
                 sessionQueue.async {
@@ -244,10 +200,11 @@ extension DetectionViewController {
                             self?.audioWriterInput?.markAsFinished()
                             self?.videoWriter!.finishWriting {
                                 self?.isRecording = false
-                                self?.recorded = true
+                                self?.recordingEnabled = false
+                                self?.startRecordingEnablerTimer()
                                 self?.sessionAtSourceTime = nil
                                 print("Video writer finished")
-                                self?.uploadDataToS3AndDelete(filePath: filePath)
+                                self?.documentUploader.uploadDataToS3AndDelete(filePath: filePath)
                             }
                         })
                     } catch {
@@ -275,15 +232,6 @@ extension DetectionViewController {
         let origin = previewLayer.layerPointConverted(fromCaptureDevicePoint: rect.origin)
         let size = previewLayer.layerPointConverted(fromCaptureDevicePoint: rect.size.cgPoint)
         return CGRect(origin: origin, size: size.cgSize)
-    }
-}
-
-
-// MARK: - Gesture methods
-
-extension DetectionViewController {
-    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        // TODO: Do something
     }
 }
 

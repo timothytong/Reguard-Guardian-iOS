@@ -21,6 +21,7 @@
 		33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */; };
 		33C5F95325BA9CC900424F0E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F95225BA9CC900424F0E /* Session.swift */; };
 		33C5F96725BAB1D300424F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
+		33C5F96F25BE61C500424F0E /* DocumentUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F96E25BE61C500424F0E /* DocumentUploader.swift */; };
 		3879602B73C2FF034A5AA55C /* Pods_ReGuard_ReGuardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */; };
 		D825E10C182D25E874703988 /* Pods_ReGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F0D54DC5E5003185DE16AF /* Pods_ReGuard.framework */; };
 		E4A1E3D367D35E968BE9C633 /* Pods_ReGuardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D80517638E77191353A16A /* Pods_ReGuardTests.framework */; };
@@ -65,6 +66,7 @@
 		331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFetcher.swift; sourceTree = "<group>"; };
 		33C5F95225BA9CC900424F0E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		33C5F96E25BE61C500424F0E /* DocumentUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUploader.swift; sourceTree = "<group>"; };
 		4052D5EBBA64D991AEFDF9F7 /* Pods-ReGuardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuardTests.debug.xcconfig"; path = "Target Support Files/Pods-ReGuardTests/Pods-ReGuardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A8D8EB747F375078D7D6239 /* Pods_ReGuard_ReGuardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReGuard_ReGuardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0B5E7166B27364D0FF04EF /* Pods-ReGuard-ReGuardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReGuard-ReGuardUITests.release.xcconfig"; path = "Target Support Files/Pods-ReGuard-ReGuardUITests/Pods-ReGuard-ReGuardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */,
 				331DA3F325ABFEE500FAFCF6 /* FaceView.swift */,
 				331DA3C525ABFEAD00FAFCF6 /* Info.plist */,
+				33C5F96E25BE61C500424F0E /* DocumentUploader.swift */,
 			);
 			path = ReGuard;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */,
 				331DA3FD25ABFEE500FAFCF6 /* DetectionViewController.swift in Sources */,
 				331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */,
+				33C5F96F25BE61C500424F0E /* DocumentUploader.swift in Sources */,
 				3301AC7525B94F2C00D6AD9D /* GuardianState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

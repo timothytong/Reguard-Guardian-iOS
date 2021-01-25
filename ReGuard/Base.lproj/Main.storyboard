@@ -34,9 +34,6 @@
                             <constraint firstItem="8b2-u3-G9X" firstAttribute="leading" secondItem="5E3-3m-hrQ" secondAttribute="leading" constant="25" id="KKj-Iq-WPE"/>
                             <constraint firstItem="8b2-u3-G9X" firstAttribute="top" secondItem="5E3-3m-hrQ" secondAttribute="top" constant="20" id="yCI-bY-Yrg"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Gax-pf-er4" appends="YES" id="Y9h-Ee-WNx"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="faceView" destination="9SK-4K-rvp" id="huL-hY-fKf"/>
@@ -44,11 +41,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-pc-gnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Gax-pf-er4">
-                    <connections>
-                        <action selector="handleTap:" destination="Aar-lP-KaY" id="rLU-al-k4b"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-234.40000000000001" y="160.34482758620689"/>
         </scene>
