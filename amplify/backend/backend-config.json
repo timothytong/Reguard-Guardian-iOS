@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "reguarda2c9f031": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

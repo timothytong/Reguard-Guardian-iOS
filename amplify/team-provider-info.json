@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reguard-dev-213526-authRole",
+      "UnauthRoleArn": "arn:aws:iam::355565736138:role/amplify-reguard-dev-213526-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::355565736138:role/amplify-reguard-dev-213526-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reguard-dev-213526-deployment",
+      "UnauthRoleName": "amplify-reguard-dev-213526-unauthRole",
+      "StackName": "amplify-reguard-dev-213526",
+      "StackId": "arn:aws:cloudformation:us-east-1:355565736138:stack/amplify-reguard-dev-213526/a2a4eb90-612a-11eb-8032-120a4775d9ef",
+      "AmplifyAppId": "dkqbunafq1bm7"
+    },
+    "categories": {
+      "auth": {
+        "reguarda2c9f031": {}
+      }
+    }
+  }
+}

@@ -3,7 +3,6 @@ import UIKit
 import Vision
 import Photos
 import SwiftState
-import SocketIO
 
 class DetectionViewController: UIViewController {
     @IBOutlet var faceView: FaceView!
