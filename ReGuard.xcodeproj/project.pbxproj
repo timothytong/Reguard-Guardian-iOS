@@ -146,11 +146,11 @@
 				331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */,
 				331DA3C025ABFEAD00FAFCF6 /* Assets.xcassets */,
 				331DA3EA25ABFEE400FAFCF6 /* AWSS3DAO.swift */,
+				33C5F96E25BE61C500424F0E /* DocumentUploader.swift */,
 				331DA3EC25ABFEE500FAFCF6 /* Base.lproj */,
 				331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */,
 				331DA3F325ABFEE500FAFCF6 /* FaceView.swift */,
 				331DA3C525ABFEAD00FAFCF6 /* Info.plist */,
-				33C5F96E25BE61C500424F0E /* DocumentUploader.swift */,
 			);
 			path = ReGuard;
 			sourceTree = "<group>";

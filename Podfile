@@ -9,6 +9,8 @@ target 'ReGuard' do
   pod 'AWSMobileClient'
   pod 'AWSS3'
   pod 'SwiftState'
+  pod 'Amplify'
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 
   target 'ReGuardTests' do
     inherit! :search_paths

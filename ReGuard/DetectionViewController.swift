@@ -3,6 +3,7 @@ import UIKit
 import Vision
 import Photos
 import SwiftState
+import SocketIO
 
 class DetectionViewController: UIViewController {
     @IBOutlet var faceView: FaceView!
@@ -24,6 +25,7 @@ class DetectionViewController: UIViewController {
                 videoWriterInput: AVAssetWriterInput?,
                 audioWriterInput: AVAssetWriterInput?,
                 sessionAtSourceTime: CMTime?
+    
     
     // private let photoOutput = AVCapturePhotoOutput(),
     
@@ -83,14 +85,18 @@ extension DetectionViewController {
                 
                 fsm.addHandler(.idle => .guarding) { context in
                     print("Now guarding")
-                    self.recordingLabel.isHidden = false
+                    DispatchQueue.main.async {
+                        self.recordingLabel.isHidden = false
+                    }
                     self.recordingEnabled = true
                     self.autoSessionFetcherTimer?.invalidate()
                 }
                 
                 fsm.addHandler(.guarding => .idle) { context in
                     print("Now idling")
-                    self.recordingLabel.isHidden = true
+                    DispatchQueue.main.async {
+                        self.recordingLabel.isHidden = true
+                    }
                     self.startSessionAutoFetcher()
                 }
             }
@@ -102,7 +108,7 @@ extension DetectionViewController {
     }
     
     func startSessionAutoFetcher() {
-        autoSessionFetcherTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.refreshActiveSession), userInfo: nil, repeats: true)
+        autoSessionFetcherTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.refreshActiveSession), userInfo: nil, repeats: true)
     }
     
     func startRecordingEnablerTimer() {
