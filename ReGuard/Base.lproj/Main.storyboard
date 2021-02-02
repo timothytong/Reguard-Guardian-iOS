@@ -41,12 +41,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wz-0o-CD1">
                                 <rect key="frame" x="223" y="501" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="PCN-Dw-pZf" eventType="touchUpInside" id="G8Y-q5-xKo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Wg-617">
                                 <rect key="frame" x="88" y="502" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="Uvg-SL-eAx" kind="showDetail" identifier="SignUpButtonClickedSegue" id="J8x-NA-58z"/>
+                                    <segue destination="Uvg-SL-eAx" kind="show" identifier="SignUpButtonClickedSegue" id="J8x-NA-58z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-FX-gva">
@@ -78,10 +81,17 @@
                             <constraint firstItem="EU8-R1-XGt" firstAttribute="top" secondItem="dVj-B8-GeD" secondAttribute="bottom" constant="49" id="t1D-e3-6UE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="C0K-eg-a0L"/>
+                    <connections>
+                        <outlet property="emailField" destination="dVj-B8-GeD" id="sH3-CB-MaX"/>
+                        <outlet property="loginButton" destination="7wz-0o-CD1" id="4sP-Rq-fAx"/>
+                        <outlet property="passwordField" destination="EU8-R1-XGt" id="GdD-PE-pPJ"/>
+                        <segue destination="QTV-WL-tD5" kind="show" identifier="LoginToConfirmCodeVCSegue" id="R4C-38-hz5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ij8-US-clb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210.4000000000001" y="159.60591133004928"/>
+            <point key="canvasLocation" x="-319" y="160"/>
         </scene>
         <!--Detection View Controller-->
         <scene sceneID="tR7-cA-c2e">
@@ -118,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-pc-gnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="160"/>
+            <point key="canvasLocation" x="-319" y="854"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="7Ma-Wz-m1a">
@@ -184,17 +194,78 @@
                             <constraint firstItem="8vM-Qh-5wU" firstAttribute="width" secondItem="ZoR-qc-lbw" secondAttribute="height" multiplier="131:812" id="rVu-eD-y6d"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5Nk-q6-vAZ"/>
                     <connections>
                         <outlet property="confirmButton" destination="wr9-2R-l8W" id="9Yw-BL-avh"/>
                         <outlet property="emailField" destination="BUf-Dq-TaT" id="RRQ-UZ-PmR"/>
                         <outlet property="passwordField" destination="RUp-J6-rrl" id="lLt-g0-7CG"/>
+                        <segue destination="QTV-WL-tD5" kind="show" identifier="ShowConfirmCodeVCSegue" id="tjT-CW-ToT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67Q-tL-H0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="160"/>
+            <point key="canvasLocation" x="529" y="160"/>
+        </scene>
+        <!--Confirm Code View Controller-->
+        <scene sceneID="i0G-If-5T3">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmCodeViewController" id="QTV-WL-tD5" customClass="ConfirmCodeViewController" customModule="ReGuard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ae9-43-r5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3C-SC-dG4">
+                                <rect key="frame" x="126.33333333333334" y="170" width="122.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AD1-9t-oZn" customClass="OneTimeCodeTextField" customModule="ReGuard" customModuleProvider="target">
+                                <rect key="frame" x="42.666666666666657" y="278" width="290" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="2dm-hs-aeR"/>
+                                    <constraint firstAttribute="width" constant="290" id="8Nd-jC-7iv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qve-kl-M20">
+                                <rect key="frame" x="218" y="364" width="105" height="30"/>
+                                <state key="normal" title="Resend Code"/>
+                                <connections>
+                                    <action selector="resendCodeBtnClicked:" destination="QTV-WL-tD5" eventType="touchUpInside" id="NvE-Pm-ZAq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SZY-nh-LUX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AD1-9t-oZn" firstAttribute="top" secondItem="E3C-SC-dG4" secondAttribute="bottom" constant="87" id="1lD-88-T2G"/>
+                            <constraint firstItem="qve-kl-M20" firstAttribute="width" secondItem="Ae9-43-r5R" secondAttribute="height" multiplier="105:758" id="Gba-FS-3ht"/>
+                            <constraint firstItem="qve-kl-M20" firstAttribute="top" secondItem="AD1-9t-oZn" secondAttribute="bottom" constant="25" id="PY5-CO-x4E"/>
+                            <constraint firstItem="E3C-SC-dG4" firstAttribute="width" secondItem="Ae9-43-r5R" secondAttribute="height" multiplier="131:812" id="Uwn-Ys-PtQ"/>
+                            <constraint firstItem="E3C-SC-dG4" firstAttribute="centerX" secondItem="SZY-nh-LUX" secondAttribute="centerX" id="bNT-u3-bxD"/>
+                            <constraint firstItem="AD1-9t-oZn" firstAttribute="centerX" secondItem="SZY-nh-LUX" secondAttribute="centerX" id="eKY-hk-Dl5"/>
+                            <constraint firstItem="qve-kl-M20" firstAttribute="leading" secondItem="E3C-SC-dG4" secondAttribute="trailing" constant="-30.666666666666686" id="prK-2L-7La"/>
+                            <constraint firstItem="E3C-SC-dG4" firstAttribute="top" secondItem="SZY-nh-LUX" secondAttribute="top" constant="170" id="qtd-vI-7Mz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mAf-0I-yhj"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="AD1-9t-oZn" id="avS-vf-YuB"/>
+                        <outlet property="resendCodeButton" destination="qve-kl-M20" id="hSZ-ht-yYM"/>
+                        <segue destination="Xyc-su-x5d" kind="unwind" identifier="ConfirmCodeVCUnwindToLoginSegue" unwindAction="unwindToLogin:" id="ARa-V2-CFY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rgq-T8-sy5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Xyc-su-x5d" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="159.60591133004928"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R4C-38-hz5"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

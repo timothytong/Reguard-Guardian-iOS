@@ -13,24 +13,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         authSessManager = AuthSessionManager()
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
                                                                 identityPoolId:"us-east-1:7ebe7028-f342-4a23-a977-39db064e1ba3")
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        renderRoot()
+        return true
+    }
+    
+    func renderRoot() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var rootController: UIViewController
         
         switch authSessManager!.authState {
         case .session(let user):
             rootController = mainStoryboard.instantiateViewController(withIdentifier: "DetectionViewController") as! DetectionViewController
             print("Showing detection screen")
+            self.window?.rootViewController = rootController
         default:
             rootController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
             (rootController as! LoginViewController).authSessionManager = authSessManager
+            let navigationController = UINavigationController(rootViewController: rootController)
             print("Showing login screen")
+            self.window?.rootViewController = navigationController
         }
         
-        self.window?.rootViewController = rootController
         window?.makeKeyAndVisible()
-        return true
     }
     
     private func configureAmplify() {
