@@ -20,6 +20,8 @@
 		331DA45025AC022100FAFCF6 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */; };
 		331EF81425C7609800D116AC /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EF81325C7609800D116AC /* OneTimeCodeTextField.swift */; };
 		331EF81C25C7631200D116AC /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EF81B25C7631200D116AC /* ConfirmCodeViewController.swift */; };
+		331EF83125C93BDA00D116AC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EF83025C93BDA00D116AC /* UIViewControllerExtension.swift */; };
+		33C5831B25D08FA7008FCD79 /* ConfigureGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5831A25D08FA7008FCD79 /* ConfigureGuardianViewController.swift */; };
 		33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */; };
 		33C5F95325BA9CC900424F0E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F95225BA9CC900424F0E /* Session.swift */; };
 		33C5F96725BAB1D300424F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		331EF81325C7609800D116AC /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		331EF81B25C7631200D116AC /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
+		331EF83025C93BDA00D116AC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		33C5831A25D08FA7008FCD79 /* ConfigureGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureGuardianViewController.swift; sourceTree = "<group>"; };
 		33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFetcher.swift; sourceTree = "<group>"; };
 		33C5F95225BA9CC900424F0E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		33C5F96E25BE61C500424F0E /* DocumentUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUploader.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				331DA3F225ABFEE500FAFCF6 /* DetectionViewController.swift */,
 				33C5F9E125C28A3800424F0E /* LoginViewController.swift */,
 				33C5F9FB25C3E9BC00424F0E /* SignupViewController.swift */,
+				33C5831A25D08FA7008FCD79 /* ConfigureGuardianViewController.swift */,
 				331DA3F325ABFEE500FAFCF6 /* FaceView.swift */,
 				331DA3C525ABFEAD00FAFCF6 /* Info.plist */,
 				331EF81B25C7631200D116AC /* ConfirmCodeViewController.swift */,
@@ -198,6 +203,7 @@
 			children = (
 				331DA44D25AC022100FAFCF6 /* UIViewExtension.swift */,
 				331DA44E25AC022100FAFCF6 /* CoreGraphicsExtensions.swift */,
+				331EF83025C93BDA00D116AC /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 				331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */,
 				331EF81C25C7631200D116AC /* ConfirmCodeViewController.swift in Sources */,
 				331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */,
+				331EF83125C93BDA00D116AC /* UIViewControllerExtension.swift in Sources */,
 				331DA3F625ABFEE500FAFCF6 /* AWSS3DAO.swift in Sources */,
 				33C5F95325BA9CC900424F0E /* Session.swift in Sources */,
 				331DA3FE25ABFEE500FAFCF6 /* FaceView.swift in Sources */,
@@ -514,6 +521,7 @@
 				33C5F9FC25C3E9BD00424F0E /* SignupViewController.swift in Sources */,
 				331EF81425C7609800D116AC /* OneTimeCodeTextField.swift in Sources */,
 				33C5F96F25BE61C500424F0E /* DocumentUploader.swift in Sources */,
+				33C5831B25D08FA7008FCD79 /* ConfigureGuardianViewController.swift in Sources */,
 				3301AC7525B94F2C00D6AD9D /* GuardianState.swift in Sources */,
 				33C5F9E225C28A3800424F0E /* LoginViewController.swift in Sources */,
 			);

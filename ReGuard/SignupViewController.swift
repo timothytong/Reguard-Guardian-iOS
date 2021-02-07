@@ -16,12 +16,13 @@ class SignupViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewDidLoad() {
         print("Session Manager:", authSessionManager)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.hideKeyboardWhenTapped()
         super.viewDidLoad()
     }
     
@@ -43,14 +44,10 @@ class SignupViewController: UIViewController {
                 }
             })
         }
- 
-        // timothykytong@gmail.com
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowConfirmCodeVCSegue" {
-            (segue.destination as! ConfirmCodeViewController).authSessionManager = authSessionManager
-        }
+        
     }
    
 }

@@ -15,10 +15,10 @@ class ConfirmCodeViewController: UIViewController {
     @IBOutlet weak var resendCodeButton: UIButton!
     
     var email: String?
-    var authSessionManager: AuthSessionManager?
+    var authSessionManager = AuthSessionManager.shared
     
     @IBAction func resendCodeBtnClicked(_ sender: Any) {
-        guard let authSessionManager = authSessionManager, let email = email else {
+        guard let email = email else {
             print("Where tf is auth session mgr / email???")
             return
         }
@@ -33,10 +33,11 @@ class ConfirmCodeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func viewDidLoad() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         codeTextField.configure()
         codeTextField.didEnterLastDigit = { [weak self] code in
             guard let email = self?.email, let authManager = self?.authSessionManager else { return }
@@ -65,15 +66,6 @@ class ConfirmCodeViewController: UIViewController {
                     self?.performSegue(withIdentifier: "ConfirmCodeVCUnwindToLoginSegue", sender: nil)
                 })
             }
-        }
-    }
-    
-    private func showSimpleAlert(title: String, description: String, onComplete: (() -> Void)?) {
-        DispatchQueue.main.async {
-            let dialog = UIAlertController(title: title, message: description, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: {_ in onComplete?()})
-            dialog.addAction(okAction)
-            self.present(dialog, animated: true, completion: nil)
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Amplify
+import AmplifyPlugins
 
 enum AuthState {
     case signUp
@@ -16,10 +17,23 @@ enum AuthState {
 }
 
 final class AuthSessionManager {
+    static let shared = AuthSessionManager()
+    
     var authState: AuthState = .login
     
-    init() {
+    private init() {
+        configureAmplify()
         getCurrentUser {}
+    }
+    
+    private func configureAmplify() {
+        do {
+            try Amplify.add(plugin: AWSCognitoAuthPlugin())
+            try Amplify.configure()
+            print("Amplify configured successfully")
+        } catch {
+            print("Unable to configure amplify: \(error)")
+        }
     }
     
     func getCurrentUser(onDone: () -> Void) {
@@ -98,6 +112,20 @@ final class AuthSessionManager {
                 }
             case .failure(let error):
                 print("Failed to confirm code:", error)
+                onError(error)
+            }
+        }
+    }
+    
+    func logout(onDone: @escaping (() -> Void), onError: @escaping ((AuthError) -> Void)) {
+        Amplify.Auth.signOut { result in
+            print("Sign out result: \(result)")
+            switch result {
+            case .success(let signoutResult):
+                self.authState = .login
+                onDone()
+            case .failure(let error):
+                print("Error signing out: \(error)")
                 onError(error)
             }
         }

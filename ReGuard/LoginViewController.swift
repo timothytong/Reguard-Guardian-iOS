@@ -12,7 +12,7 @@ import AmplifyPlugins
 
 class LoginViewController: UIViewController {
     
-    var authSessionManager: AuthSessionManager?
+    let authSessionManager = AuthSessionManager.shared
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.hideKeyboardWhenTapped()
         super.viewDidLoad()
     }
  
@@ -31,13 +32,12 @@ class LoginViewController: UIViewController {
             (segue.destination as! SignupViewController).authSessionManager = authSessionManager
         } else if segue.identifier == "LoginToConfirmCodeVCSegue" {
             let vc = segue.destination as! ConfirmCodeViewController
-            vc.authSessionManager = authSessionManager
             vc.email = emailField.text
         }
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        authSessionManager?.login(email: emailField.text!, password: passwordField.text!, onDone: { result in
+        authSessionManager.login(email: emailField.text!, password: passwordField.text!, onDone: { result in
             if (result.isSignedIn) {
                 print("Signed in, rerendering root")
                 DispatchQueue.main.async {

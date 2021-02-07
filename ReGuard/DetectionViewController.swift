@@ -4,9 +4,17 @@ import Vision
 import Photos
 import SwiftState
 
+enum DetectionControllerError: Error {
+    case cameraUnavailable
+    case videoPreviewUnavailable
+}
+
 class DetectionViewController: UIViewController {
     @IBOutlet var faceView: FaceView!
     @IBOutlet weak var recordingLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
     
     private let session = AVCaptureSession(),
                 videoOutput = AVCaptureVideoDataOutput(),
@@ -24,7 +32,6 @@ class DetectionViewController: UIViewController {
                 videoWriterInput: AVAssetWriterInput?,
                 audioWriterInput: AVAssetWriterInput?,
                 sessionAtSourceTime: CMTime?
-    
     
     // private let photoOutput = AVCapturePhotoOutput(),
     
@@ -57,8 +64,22 @@ class DetectionViewController: UIViewController {
         maxX = view.bounds.maxX
         midY = view.bounds.midY
         maxY = view.bounds.maxY
+        do {
+            try configureCaptureSession()
+        } catch {
+            switch error {
+            case DetectionControllerError.cameraUnavailable:
+                self.errorLabel.isHidden = false
+                self.errorMessageLabel.text = "CAMERA UNAVAILABLE"
+                self.errorMessageLabel.isHidden = false
+            default:
+                self.errorLabel.isHidden = false
+                self.errorMessageLabel.text = "VIDEO UNAVAILABLE"
+                self.errorMessageLabel.isHidden = false
+            }
+            return
+        }
         
-        configureCaptureSession()
         session.startRunning()
         setupStateMachine()
     }
@@ -244,11 +265,11 @@ extension DetectionViewController {
 
 extension DetectionViewController {
     
-    func configureCaptureSession() {
+    func configureCaptureSession() throws {
         session.beginConfiguration()
         // Define the capture device we want to use
         guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
-            fatalError("No front video camera available")
+            throw DetectionControllerError.cameraUnavailable
         }
         
         // Connect the camera to the capture session input
@@ -257,7 +278,7 @@ extension DetectionViewController {
             session.addInput(cameraInput)
             print("Video device activated")
         } catch {
-            fatalError(error.localizedDescription)
+            throw DetectionControllerError.videoPreviewUnavailable
         }
         
         do {
