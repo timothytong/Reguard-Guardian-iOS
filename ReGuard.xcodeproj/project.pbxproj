@@ -22,7 +22,8 @@
 		331EF81C25C7631200D116AC /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EF81B25C7631200D116AC /* ConfirmCodeViewController.swift */; };
 		331EF83125C93BDA00D116AC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EF83025C93BDA00D116AC /* UIViewControllerExtension.swift */; };
 		33C5831B25D08FA7008FCD79 /* ConfigureGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5831A25D08FA7008FCD79 /* ConfigureGuardianViewController.swift */; };
-		33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */; };
+		33C5832325D0A0C8008FCD79 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5832225D0A0C8008FCD79 /* Device.swift */; };
+		33C5F94D25BA9C6500424F0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F94C25BA9C6500424F0E /* NetworkManager.swift */; };
 		33C5F95325BA9CC900424F0E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F95225BA9CC900424F0E /* Session.swift */; };
 		33C5F96725BAB1D300424F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331DA3BA25ABFEAD00FAFCF6 /* Main.storyboard */; };
 		33C5F96F25BE61C500424F0E /* DocumentUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F96E25BE61C500424F0E /* DocumentUploader.swift */; };
@@ -78,7 +79,8 @@
 		331EF81B25C7631200D116AC /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
 		331EF83025C93BDA00D116AC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		33C5831A25D08FA7008FCD79 /* ConfigureGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureGuardianViewController.swift; sourceTree = "<group>"; };
-		33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFetcher.swift; sourceTree = "<group>"; };
+		33C5832225D0A0C8008FCD79 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		33C5F94C25BA9C6500424F0E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		33C5F95225BA9CC900424F0E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		33C5F96E25BE61C500424F0E /* DocumentUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUploader.swift; sourceTree = "<group>"; };
 		33C5F9E125C28A3800424F0E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +221,7 @@
 		33C5F94B25BA9C5600424F0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				33C5F94C25BA9C6500424F0E /* SessionFetcher.swift */,
+				33C5F94C25BA9C6500424F0E /* NetworkManager.swift */,
 				33C5F9E625C28B0800424F0E /* AuthSessionManager.swift */,
 			);
 			path = Network;
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				33C5F95225BA9CC900424F0E /* Session.swift */,
+				33C5832225D0A0C8008FCD79 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,9 +510,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C5F94D25BA9C6500424F0E /* SessionFetcher.swift in Sources */,
+				33C5F94D25BA9C6500424F0E /* NetworkManager.swift in Sources */,
 				331DA44F25AC022100FAFCF6 /* UIViewExtension.swift in Sources */,
 				331EF81C25C7631200D116AC /* ConfirmCodeViewController.swift in Sources */,
+				33C5832325D0A0C8008FCD79 /* Device.swift in Sources */,
 				331DA3B525ABFEAD00FAFCF6 /* AppDelegate.swift in Sources */,
 				331EF83125C93BDA00D116AC /* UIViewControllerExtension.swift in Sources */,
 				331DA3F625ABFEE500FAFCF6 /* AWSS3DAO.swift in Sources */,

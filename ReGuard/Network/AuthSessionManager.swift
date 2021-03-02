@@ -20,10 +20,11 @@ final class AuthSessionManager {
     static let shared = AuthSessionManager()
     
     var authState: AuthState = .login
+    var currentUser: AuthUser?
     
     private init() {
         configureAmplify()
-        getCurrentUser {}
+        refreshAndGetCurrentUser {}
     }
     
     private func configureAmplify() {
@@ -36,10 +37,14 @@ final class AuthSessionManager {
         }
     }
     
-    func getCurrentUser(onDone: () -> Void) {
+    func refreshAndGetCurrentUser(onDone: () -> Void) {
         if let user = Amplify.Auth.getCurrentUser() {
+            print("Amplify found user: \(user)")
             authState = .session(user: user)
+            currentUser = user
             onDone()
+        } else {
+            currentUser = nil
         }
     }
     
@@ -69,7 +74,7 @@ final class AuthSessionManager {
             case .success(let loginResult):
                 print("Login result:", loginResult)
                 if (loginResult.isSignedIn) {
-                    self?.getCurrentUser() {
+                    self?.refreshAndGetCurrentUser() {
                         onDone(loginResult)
                     }
                 } else {

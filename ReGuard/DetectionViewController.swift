@@ -51,7 +51,7 @@ class DetectionViewController: UIViewController {
     var midY: CGFloat = 0.0
     var maxY: CGFloat = 0.0
     
-    let sessionFetcher = SessionFetcher()
+    let sessionFetcher = NetworkManager.shared
     var guardianSession: Session?
     var autoSessionFetcherTimer: Timer?
     var stateMachine: StateMachine<GuardianState, NoEvent>?
