@@ -29,21 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let deviceId = UIDevice.current.identifierForVendor else {
                 fatalError("Unable to get a device ID!")
             }
-            networkManager.getDeviceForUser(userId: userId, deviceId: deviceId.uuidString) { deviceInfo in
-                DispatchQueue.main.async {
-                    if let deviceInfo = deviceInfo {
-                        if let device = deviceInfo.device {
-                            rootController = mainStoryboard.instantiateViewController(withIdentifier: "DetectionViewController") as! DetectionViewController
-                            print("Showing detection screen")
-                        } else {
-                            rootController = mainStoryboard.instantiateViewController(withIdentifier: "ConfigureGuardianViewController") as! ConfigureGuardianViewController
-                            print("Showing configure screen")
-                        }
-                    } else {
-                        fatalError("Unable to retrieve device registration info")
-                    }
-                    self.window?.rootViewController = rootController
-                }
+            DispatchQueue.main.async {
+                rootController = mainStoryboard.instantiateViewController(withIdentifier: "DetectionViewController") as! DetectionViewController
+                print("Showing detection screen")
+                self.window?.rootViewController = rootController
             }
         default:
             rootController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")

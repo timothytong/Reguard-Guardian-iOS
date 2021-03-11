@@ -11,6 +11,7 @@ import UIKit
 class OneTimeCodeTextField: UITextField {
     private var isConfigured = false
     private var digitLabels = [UILabel]()
+    private var labelColor: UIColor = .black
     var defaultCharacter = "-"
     var didEnterLastDigit: ((String) -> Void)?
     private lazy var tapRecognizer: UITapGestureRecognizer = {
@@ -19,10 +20,10 @@ class OneTimeCodeTextField: UITextField {
         return recognizer
     }()
     
-    func configure(with digitCount: Int = 6) {
+    func configure(color textColor: UIColor = .black, digitCount: Int = 6) {
         guard isConfigured == false else { return }
         isConfigured.toggle()
-        
+        self.labelColor = textColor
         configureTextField()
         
         let labelsStackView = createLabelStackView(with: digitCount)
@@ -64,6 +65,7 @@ class OneTimeCodeTextField: UITextField {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textAlignment = .center
+            label.textColor = self.labelColor
             label.font = .systemFont(ofSize: 40)
             label.backgroundColor = .clear
             label.isUserInteractionEnabled = true

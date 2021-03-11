@@ -34,6 +34,7 @@ class DetectionViewController: UIViewController {
                 sessionAtSourceTime: CMTime?
     
     // private let photoOutput = AVCapturePhotoOutput(),
+    let currentUser = AuthSessionManager.shared.currentUser
     
     let videoOutputQueue = DispatchQueue(
         label: "Video data queue",
@@ -51,10 +52,28 @@ class DetectionViewController: UIViewController {
     var midY: CGFloat = 0.0
     var maxY: CGFloat = 0.0
     
-    let sessionFetcher = NetworkManager.shared
+    let networkManager = NetworkManager.shared
     var guardianSession: Session?
     var autoSessionFetcherTimer: Timer?
     var stateMachine: StateMachine<GuardianState, NoEvent>?
+    
+    @IBAction func unwindToDetectionView(_ seg: UIStoryboardSegue) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.networkManager.getDeviceForUser(userId: currentUser!.userId, deviceId: UIDevice.current.identifierForVendor!.uuidString) { [weak self] deviceInfo in
+            if let deviceInfo = deviceInfo {
+                if deviceInfo.device == nil {
+                    DispatchQueue.main.async {
+                        self?.performSegue(withIdentifier: "ShowConfigureGuardian", sender: nil)
+                    }
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +109,7 @@ extension DetectionViewController {
     @objc func refreshActiveSession() {
         // guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else { return }
         let deviceId = "BADC19DE-2E31-4B09-B6E2-85EBDFC778E6"
-        self.sessionFetcher.getActiveSession(userId: "user", deviceId: deviceId) { session in
+        self.networkManager.getActiveSession(userId: "user", deviceId: deviceId) { session in
             if session != nil && self.stateMachine?.state != .guarding {
                 self.stateMachine! <- .guarding
             }

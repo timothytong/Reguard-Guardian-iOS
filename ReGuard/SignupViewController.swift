@@ -20,6 +20,7 @@ class SignupViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.confirmButton.layer.cornerRadius = 19.5
         print("Session Manager:", authSessionManager)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.hideKeyboardWhenTapped()
@@ -32,7 +33,7 @@ class SignupViewController: UIViewController {
             self.authSessionManager?.signUp(email: email, password: password, onDone: {
                 print("Done sign up!")
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "ShowConfirmCodeVCSegue", sender: self)
+                    self.performSegue(withIdentifier: "ShowConfirmCodeVCSegue", sender: email)
                 }
             }, onError: { error in
                 DispatchQueue.main.async {
@@ -47,8 +48,9 @@ class SignupViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "ShowConfirmCodeVCSegue" {
+            let vc = segue.destination as! ConfirmCodeViewController
+            vc.email = emailField.text
+        }
     }
-   
 }
-

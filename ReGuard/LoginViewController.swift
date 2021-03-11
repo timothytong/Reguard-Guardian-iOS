@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTapped()
+        self.loginButton.layer.cornerRadius = 10
         super.viewDidLoad()
     }
  
@@ -41,7 +42,7 @@ class LoginViewController: UIViewController {
             if (result.isSignedIn) {
                 print("Signed in, rerendering root")
                 DispatchQueue.main.async {
-                    (UIApplication.shared.delegate as? AppDelegate)?.renderRoot()
+                    (UIApplication.shared.delegate as! AppDelegate).renderRoot()
                 }
                 return
             }

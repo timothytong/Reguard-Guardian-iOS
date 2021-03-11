@@ -45,7 +45,7 @@ class ConfigureGuardianViewController: UIViewController {
         }
         networkManager.saveGuardian(userId: authSessionManager.currentUser!.userId, deviceId: UIDevice.current.identifierForVendor!.uuidString, location: location, nickname: deviceName) { [weak self] in
             self?.showSimpleAlert(title: "Success", description: "Guardian device successfully set up.", onComplete: {
-                
+                self?.performSegue(withIdentifier: "unwindToDetectionView", sender: nil)
             })
         } onError: { [weak self] in
             self?.showSimpleAlert(title: "Error", description: "Unable to set up Guardian device.", onComplete: {
